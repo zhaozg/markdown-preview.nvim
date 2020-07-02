@@ -21,7 +21,6 @@ import flowchart, { renderFlowchart } from './flowchart'
 import dot, { renderDot } from './dot'
 import blockUml from './plantuml'
 import markmap, {renderMarkmap} from './markmap'
-import flow, { renderFlow } from './flow'
 import scrollToLine from './scroll'
 import { meta } from './meta';
 import markdownImSize from './markdown-it-imsize'
