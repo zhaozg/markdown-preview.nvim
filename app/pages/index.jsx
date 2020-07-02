@@ -20,7 +20,6 @@ import diagram, { renderDiagram } from './diagram'
 import flowchart, { renderFlowchart } from './flowchart'
 import dot, { renderDot } from './dot'
 import blockUml from './plantuml'
-import markmap, {renderMarkmap} from './markmap'
 import scrollToLine from './scroll'
 import { meta } from './meta';
 import markdownImSize from './markdown-it-imsize'
@@ -135,7 +134,6 @@ export default class PreviewPage extends React.Component {
         hide_yaml_meta: hideYamlMeta = 1,
         sequence_diagrams: sequenceDiagrams = {},
         flowchart_diagrams: flowchartDiagrams = {},
-        markmap: markmapDiagrams = {}
       } = options
       // markdown-it
       this.md = new MarkdownIt({
@@ -172,7 +170,6 @@ export default class PreviewPage extends React.Component {
           ...sequenceDiagrams
         })
         .use(flowchart, flowchartDiagrams)
-        .use(markmap, markmapDiagrams)
         .use(dot)
         .use(markdownItAnchor, {
           permalink: true,
@@ -204,7 +201,6 @@ export default class PreviewPage extends React.Component {
       chart.render()
       renderDiagram()
       renderFlowchart()
-      renderMarkmap()
       renderDot()
 
       if (isActive && !options.disable_sync_scroll) {
